@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     
+    var newRandomMovie : Movie!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -45,12 +48,14 @@ class ViewController: UIViewController {
                     var swiftMovies : [Movie] = []
                     
                     for movie in jsonMovies {
-                        let newMovie = Movie(json: movie)
-                        swiftMovies.append(newMovie)
+                        let newRandomMovie = Movie(json: movie)
+                        swiftMovies.append(newRandomMovie)
                     }
                     
                     let randomIndex = Int(arc4random_uniform(UInt32 (swiftMovies.count)))
-                    self.newDisplayMovie(swiftMovies[randomIndex])
+                    self.newRandomMovie = swiftMovies[randomIndex]
+                    self.newDisplayMovie(self.newRandomMovie)
+                    self.loadPoster(self.newRandomMovie.poster)
                     // need self in a closure.
                 }
                 
@@ -73,7 +78,10 @@ class ViewController: UIViewController {
     // Updates the image view when passed a url string
     func loadPoster(urlString: String) {
         posterImageView.af_setImageWithURL(NSURL(string: urlString)!)
+        
+        //loadPoster(newRandomMovie.poster)
     }
+
     
     @IBAction func viewOniTunesPressed(sender: AnyObject) {
         
