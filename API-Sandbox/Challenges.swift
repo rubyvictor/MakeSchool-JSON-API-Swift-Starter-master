@@ -18,7 +18,8 @@ internal func exerciseOne() {
     }
     let jsonData = NSData(contentsOfURL: jsonURL)!
     
-    
+    //This is NOT a good way of Json.  Exercise two better way.
+    //also, we are manually figuring out the value of each jsonData.  is it string or int or double? manual got errors!
     // Enter SwiftyJSON!
     // userData now contains a JSON object representing all the data in the JSON file.
     // This JSON file contains the same data as the tutorial example.
@@ -47,7 +48,7 @@ internal func exerciseOne() {
 
     // Now it's your turn to get the rest of the values needed to print the following:
      
-     print("\(firstName) \(lastName) lives at \(street) in \(city), \(state), \(zipCode) and is a resident of \(country).If you want to contact them, you can email \(title) \(firstName) at \(emailAddress) or call their cell at \(cellPhoneNumber).")
+//     print("\(firstName) \(lastName) lives at \(street) in \(city), \(state), \(zipCode) and is a resident of \(country).If you want to contact them, you can email \(title) \(firstName) at \(emailAddress) or call their cell at \(cellPhoneNumber).")
     
 }
 
@@ -72,9 +73,9 @@ internal func exerciseTwo() {
     
     // Uncomment this print statement when you are ready to check your code!
     
-    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
+//    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
 }
-
+/*
 internal func exerciseThree() {
     // This would normally be network calls that return `NSData`. We'll show you how to do those soon!
     // In this case, we are using a local JSON file.
@@ -135,5 +136,5 @@ internal func exerciseThree() {
     
     
     
-    
-}
+ 
+}*/

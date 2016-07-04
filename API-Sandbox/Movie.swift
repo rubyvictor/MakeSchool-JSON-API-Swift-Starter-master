@@ -17,10 +17,11 @@ struct Movie {
     let releaseDate: String
     
     init(json: JSON) {
-        self.name = "Zootopia"
-        self.rightsOwner = "iTunes Store"
-        self.price = 19.99
-        self.link = "https://itunes.apple.com/us/movie/zootopia/id1084138493?uo=2"
-        self.releaseDate = "March 4, 2016"
+        
+        self.name = json["im:name"]["label"].stringValue
+        self.rightsOwner = json["rights"]["label"].stringValue
+        self.price = json["im:price"]["amount"].doubleValue
+        self.link = json["link"]["href"].stringValue
+        self.releaseDate = json["im:releaseDate"]["label"].stringValue
     }
 }

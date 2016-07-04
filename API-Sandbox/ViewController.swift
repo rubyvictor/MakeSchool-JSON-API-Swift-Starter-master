@@ -13,7 +13,7 @@ import AlamofireImage
 import AlamofireNetworkActivityIndicator
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var rightsOwnerLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -23,11 +23,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //
+        //        exerciseOne()
+        //        exerciseTwo()
+        //exerciseThree()
         
-        /*exerciseOne()
-        exerciseTwo()
-        exerciseThree()
-       */
         
         
         let apiToContact = "https://itunes.apple.com/us/rss/topmovies/limit=25/json"
@@ -38,19 +38,33 @@ class ViewController: UIViewController {
                 if let value = response.result.value {
                     let json = JSON(value)
                     
+                    print("HERE IT IS \(json["feed"]["entry"])")
                     
+                    var jsonMovies = json["feed"]["entry"].arrayValue
                     
-                    // Do what you need to with JSON here!
-                    // The rest is all boiler plate code you'll use for API requests
+                    var swiftMovies : [Movie] = []
                     
+                    for movie in jsonMovies {
+                        let newMovie = Movie(json: movie)
+                        swiftMovies.append(newMovie)
+                    }
                     
+                    let randomIndex = Int(arc4random_uniform(UInt32 (swiftMovies.count)))
+                    self.newDisplayMovie(swiftMovies[randomIndex])
+                    // need self in a closure.
                 }
+                
+                // Do what you need to with JSON here!
+                // The rest is all boiler plate code you'll use for API requests
+                
+                
+                
             case .Failure(let error):
                 print(error)
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,6 +76,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func viewOniTunesPressed(sender: AnyObject) {
+        
+    }
+    
+    func newDisplayMovie(movie: Movie) {
+        
+        movieTitleLabel.text = movie.name
         
     }
     
