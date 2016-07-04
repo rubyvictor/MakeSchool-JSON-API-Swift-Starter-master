@@ -24,9 +24,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        exerciseOne()
+        /*exerciseOne()
         exerciseTwo()
         exerciseThree()
+       */
+        
         
         let apiToContact = "https://itunes.apple.com/us/rss/topmovies/limit=25/json"
         // This code will call the iTunes top 25 movies endpoint listed above
@@ -35,6 +37,8 @@ class ViewController: UIViewController {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
+                    
+                    
                     
                     // Do what you need to with JSON here!
                     // The rest is all boiler plate code you'll use for API requests

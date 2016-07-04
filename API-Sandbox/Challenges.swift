@@ -23,27 +23,31 @@ internal func exerciseOne() {
     // userData now contains a JSON object representing all the data in the JSON file.
     // This JSON file contains the same data as the tutorial example.
     let userData = JSON(data: jsonData)
+    //let user = User(json: userData)
+    let firstName = userData["results"][0]["name"]["first"].stringValue
+    let lastName = userData["results"][0]["name"]["last"].stringValue
+    let street = userData["results"][0]["location"]["street"].stringValue
+    let city = userData["results"][0]["location"]["city"].stringValue
+    let state = userData["results"][0]["location"]["state"].stringValue
+    let zipCode = userData["results"][0]["location"]["postcode"].floatValue
+    let country = userData["results"][0]["nat"].stringValue
+    let title = userData["results"][0]["name"]["title"].stringValue
+    let emailAddress = userData["results"][0]["email"].stringValue
+    let cellPhoneNumber = userData["results"][0]["cell"].stringValue
+    
     
     // Alright, now we have a JSON object from SwiftyJSON containing the user data!
     // Let's save the user's first name to a constant!
-    let firstName = userData["results"][0]["name"]["first"].stringValue
+    
+    
+    
     // Do you see what we did there? We navigated down the JSON heirarchy, asked for "results",
     // then the first dictionary value of that array, then the dictionary stored in "name",
     // then the value stored in "first". We  then told it that we wanted the value as a string.
-    
-    /*
+
+    // Now it's your turn to get the rest of the values needed to print the following:
      
-     Now it's your turn to get the rest of the values needed to print the following:
-     
-     "<first name> <last name> lives at <street name> in <city>, <state>, <zip code> and is a
-     resident of <country>. If you want to contact them, you can email <title> <first name> at
-     <email address> or call their cell at <cell phone number>."
-     
-     */
-    
-    
-    
-    
+     print("\(firstName) \(lastName) lives at \(street) in \(city), \(state), \(zipCode) and is a resident of \(country).If you want to contact them, you can email \(title) \(firstName) at \(emailAddress) or call their cell at \(cellPhoneNumber).")
     
 }
 
@@ -68,7 +72,7 @@ internal func exerciseTwo() {
     
     // Uncomment this print statement when you are ready to check your code!
     
-//    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
+    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
 }
 
 internal func exerciseThree() {
@@ -105,7 +109,7 @@ internal func exerciseThree() {
      contains the `String` "Disney". Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies are Disney movies...")
+    print("The following movies are Disney movies...")
     
     
     
@@ -116,7 +120,7 @@ internal func exerciseThree() {
      movie that costs less than $15. Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies are cost less than $15...")
+    print("The following movies are cost less than $15...")
     
     
     
@@ -127,7 +131,7 @@ internal func exerciseThree() {
      each movie released in 2016. Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies were released in 2016...")
+    print("The following movies were released in 2016...")
     
     
     
