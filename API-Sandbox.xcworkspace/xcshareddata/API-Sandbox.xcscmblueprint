@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A30A128ECB539648ABDBF61CF8290C976354A8DF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BD4CED6CFC8BAB9BB31A636BF7E5FFBB13DAB9B8" : 0,
+    "A30A128ECB539648ABDBF61CF8290C976354A8DF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A6DAE77E-D9FB-4243-83AA-0A66E39C804D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BD4CED6CFC8BAB9BB31A636BF7E5FFBB13DAB9B8" : "",
+    "A30A128ECB539648ABDBF61CF8290C976354A8DF" : "JSON-API-Swift-Starter-master\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "API-Sandbox",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "API-Sandbox.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rubyvictor\/MakeSchool-JSON-API-Swift-Starter-master.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A30A128ECB539648ABDBF61CF8290C976354A8DF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rubyvictor\/MakeSchoolNotesProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BD4CED6CFC8BAB9BB31A636BF7E5FFBB13DAB9B8"
+    }
+  ]
+}

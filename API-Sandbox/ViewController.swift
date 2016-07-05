@@ -33,14 +33,18 @@ class ViewController: UIViewController {
         
         
         
+        
+//        let getPM25FromNEA = "https://api.data.gov.sg/v1/environment/pm25"
+//        let headers = ["api-key": "8rb9XOOhII0IpyZKGUqOtJNbU0YKG2pA"]
         let apiToContact = "https://itunes.apple.com/us/rss/topmovies/limit=25/json"
-        // This code will call the iTunes top 25 movies endpoint listed above
+        
+        //This code will call the iTunes top 25 movies endpoint listed above
         Alamofire.request(.GET, apiToContact).validate().responseJSON() { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    
+                    print(json)
                     print("HERE IT IS \(json["feed"]["entry"])")
                     
                     var jsonMovies = json["feed"]["entry"].arrayValue
@@ -53,7 +57,13 @@ class ViewController: UIViewController {
                     }
                     
                     let randomIndex = Int(arc4random_uniform(UInt32 (swiftMovies.count)))
-                    self.newRandomMovie = swiftMovies[randomIndex]
+                  //Yesterday
+                    //now, self.newRandomMovie = nil
+                    //self.newDisplayMovie(swiftMovies[randomIndex]) displays new movie
+                    //... but self.newRandomMovie = nil -> Still true
+                    
+                  //Today
+                    self.newRandomMovie = swiftMovies[randomIndex] //self.newRandomMovie != nil
                     self.newDisplayMovie(self.newRandomMovie)
                     self.loadPoster(self.newRandomMovie.poster)
                     // need self in a closure.
@@ -79,9 +89,8 @@ class ViewController: UIViewController {
     func loadPoster(urlString: String) {
         posterImageView.af_setImageWithURL(NSURL(string: urlString)!)
         
-        //loadPoster(newRandomMovie.poster)
     }
-
+    
     
     @IBAction func viewOniTunesPressed(sender: AnyObject) {
         
@@ -94,4 +103,3 @@ class ViewController: UIViewController {
     }
     
 }
-
