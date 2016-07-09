@@ -1,3 +1,3 @@
 # MakeSchool-JSON-API-Swift-Starter-master
 
-Call iTunes movie poster using JSON API in Swift IOS
+Practice JSON API calls in SWIFTYJSON using iTunes movie data
